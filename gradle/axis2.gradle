@@ -1,0 +1,17 @@
+def axis2Version = '1.6.2'
+def axiomVersion = '1.2.14'
+
+if(ext.has('axis2Version')){
+    axis2Version = ext.axis2Version
+}
+if(ext.has('axiomVersion')){
+    axiomVersion = ext.axiomVersion
+}
+
+dependencies {
+    compile "org.apache.axis2:axis2:${axis2Version}"
+    compile "org.apache.axis2:axis2-java2wsdl:${axis2Version}"
+    compile "org.apache.ws.commons.axiom:axiom-api:${axiomVersion}"
+    compile "org.apache.ws.commons.axiom:axiom-dom:${axiomVersion}"
+    compile "org.apache.ws.commons.axiom:axiom-impl:${axiomVersion}"
+}

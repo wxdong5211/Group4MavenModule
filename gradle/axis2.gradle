@@ -9,9 +9,9 @@ if(ext.has('axiomVersion')){
 }
 
 dependencies {
-    compile "org.apache.axis2:axis2:${axis2Version}"
-    compile "org.apache.axis2:axis2-java2wsdl:${axis2Version}"
-    compile "org.apache.ws.commons.axiom:axiom-api:${axiomVersion}"
-    compile "org.apache.ws.commons.axiom:axiom-dom:${axiomVersion}"
-    compile "org.apache.ws.commons.axiom:axiom-impl:${axiomVersion}"
+    compile "org.apache.axis2:axis2:${axis2Version}",
+            "org.apache.axis2:axis2-java2wsdl:${axis2Version}",
+            "org.apache.ws.commons.axiom:axiom-api:${axiomVersion}",
+            "org.apache.ws.commons.axiom:axiom-dom:${axiomVersion}",
+            "org.apache.ws.commons.axiom:axiom-impl:${axiomVersion}"
 }

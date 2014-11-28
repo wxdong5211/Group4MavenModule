@@ -1,0 +1,20 @@
+def hibernateVersion = '4.3.7.Final'
+
+if(ext.has('hibernateVersion')){
+    hibernateVersion = ext.hibernateVersion
+}
+
+dependencies {
+
+    //base
+    compile "org.hibernate:hibernate-core:${hibernateVersion}"
+
+    //jpa
+    compile "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
+
+    //others
+    compile "org.hibernate:hibernate-osgi:${hibernateVersion}",
+            "org.hibernate:hibernate-envers:${hibernateVersion}",
+            "org.hibernate:hibernate-infinispan:${hibernateVersion}",
+            "org.hibernate:hibernate-ehcache:${hibernateVersion}"
+}

@@ -1,0 +1,7 @@
+def jsfVersion = '2.2.8-02'
+
+dependencies {
+    compile 'javax.servlet:jstl:1.2',
+            "com.sun.faces:jsf-api:${jsfVersion}",
+            "com.sun.faces:jsf-impl:${jsfVersion}"
+}

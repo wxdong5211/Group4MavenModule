@@ -1,21 +1,34 @@
 apply plugin : 'java'
-apply plugin : 'war'//providedCompile need this plugin
+//apply plugin : 'war'//providedCompile need this plugin
 
 sourceCompatibility = 1.8
 version = '1.0'
 
-ext{
+ext {
 //    axis2Version = '1.6.2'
 //    axiomVersion = '1.2.14'
+//    struts2Version = '2.3.16.3'
+//    javassistVersion = '3.18.2-GA'
+//    springVersion = '4.1.2.RELEASE'
+//    springSecurityVersion = '3.2.5.RELEASE'
+//    hibernateVersion = '4.3.7.Final'
 }
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repository.jboss.org/nexus/content/repositories/releases/'
+    }
 }
 
 dependencies {
     testCompile 'junit:junit:4.11'
-    providedCompile  'javax:javaee-api:7.0'
+//    providedCompile  'javax:javaee-api:7.0'
 }
 
 //apply from : 'gradle/axis2.gradle'
+//apply from : 'gradle/javaeetomcat.gradle'
+//apply from : 'gradle/struts2.gradle'
+//apply from : 'gradle/spring.gradle'
+//apply from : 'gradle/springsecurity.gradle'
+//apply from : 'gradle/hibernate.gradle'

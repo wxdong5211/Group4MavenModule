@@ -1,0 +1,19 @@
+def struts2Version = '2.3.16.3'
+def javassistVersion = '3.18.2-GA'
+
+if(ext.has('struts2Version')){
+    struts2Version = ext.struts2Version
+}
+if(ext.has('javassistVersion')){
+    javassistVersion = ext.javassistVersion
+}
+
+dependencies {
+    compile "org.apache.struts:struts2-core:${struts2Version}",
+            "org.apache.struts:struts2-convention-plugin:${struts2Version}",
+            "org.apache.struts:struts2-spring-plugin:${struts2Version}",
+            "org.apache.struts:struts2-json-plugin:${struts2Version}",
+            "org.apache.struts:struts2-dojo-plugin:${struts2Version}",
+            "org.javassist:javassist:${javassistVersion}",
+            'aopalliance:aopalliance:1.0'
+}

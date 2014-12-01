@@ -16,4 +16,7 @@ dependencies {
             "org.apache.struts:struts2-dojo-plugin:${struts2Version}",
             "org.javassist:javassist:${javassistVersion}",
             'aopalliance:aopalliance:1.0'
+
+    //list all action plugin
+//    compile "org.apache.struts:struts2-config-browser-plugin:${struts2Version}"
 }

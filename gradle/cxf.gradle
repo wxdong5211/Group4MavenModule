@@ -1,0 +1,10 @@
+def cxfVersion = '3.0.2'
+
+if(ext.has('cxfVersion')){
+    cxfVersion = ext.cxfVersion
+}
+
+dependencies {
+    compile "org.apache.cxf:cxf-rt-frontend-jaxws:${cxfVersion}",
+            "org.apache.cxf:cxf-rt-transports-http:${cxfVersion}"
+}

@@ -9,6 +9,7 @@ buildDir = 'target'
 
 ext {
 //    axis2Version = '1.6.2'
+//    cxfVersion = '3.0.2'
 //    axiomVersion = '1.2.14'
 //    struts2Version = '2.3.16.3'
 //    javassistVersion = '3.18.2-GA'
@@ -31,6 +32,7 @@ dependencies {
 }
 
 //apply from : 'gradle/axis2.gradle'
+//apply from : 'gradle/cxf.gradle'
 //apply from : 'gradle/javaeetomcat.gradle'
 //apply from : 'gradle/struts2.gradle'
 //apply from : 'gradle/spring.gradle'

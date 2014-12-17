@@ -19,4 +19,7 @@ dependencies {
 
     //list all action plugin
 //    compile "org.apache.struts:struts2-config-browser-plugin:${struts2Version}"
+
+    //junit test action plugin
+//    testCompile "org.apache.struts:struts2-junit-plugin:${struts2Version}"
 }

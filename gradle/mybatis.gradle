@@ -1,0 +1,4 @@
+dependencies {
+    compile 'org.mybatis:mybatis:3.2.8'
+    compile 'org.mybatis:mybatis-spring:1.2.2'
+}

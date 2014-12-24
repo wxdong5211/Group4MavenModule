@@ -39,6 +39,7 @@ dependencies {
 //apply from : 'gradle/hibernate.gradle'
 //apply from : 'gradle/javaeetomcat.gradle'
 //apply from : 'gradle/mvnpush.gradle'
+//apply from : 'gradle/mybatis.gradle'
 //apply from : 'gradle/spring.gradle'
 //apply from : 'gradle/springsecurity.gradle'
 //apply from : 'gradle/struts2.gradle'

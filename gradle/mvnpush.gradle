@@ -5,11 +5,21 @@ def auther = 'auther'
 task sourceJar(type: Jar){
     classifier 'sources'
     from sourceSets.main.allJava
+    if (plugins.hasPlugin('scala')){
+        from sourceSets.main.allScala
+    }
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc){
-    classifier 'javadoc'
-    from javadoc.destinationDir
+if (plugins.hasPlugin('scala')){
+    task javadocJar(type: Jar, dependsOn: scaladoc){
+        classifier 'javadoc'
+        from scaladoc.destinationDir
+    }
+}else{
+    task javadocJar(type: Jar, dependsOn: javadoc){
+        classifier 'javadoc'
+        from javadoc.destinationDir
+    }
 }
 
 publishing {

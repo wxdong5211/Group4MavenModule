@@ -1,12 +1,15 @@
 apply plugin : 'java'
 //apply plugin : 'war'//providedCompile need this plugin
 //apply plugin: 'scala'// when use scala lang
+//apply from : 'gradle/application.gradle'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 group = 'com.impler.module'
 version = '1.0'
 buildDir = 'target'
+
+//mainClassName = "AppMainFullName"
 
 ext {
 //    axis2Version = '1.6.2'

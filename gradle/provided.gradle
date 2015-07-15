@@ -1,0 +1,26 @@
+configurations {
+    provided {
+        description = 'Non-exported compile-time dependencies'
+//        dependencies.all { dep ->
+//            configurations.default.exclude group: dep.group, module: dep.name
+//        }
+    }
+//    compile.extendsFrom provided
+}
+sourceSets {
+    main {
+        compileClasspath += configurations.provided
+        runtimeClasspath += configurations.provided
+    }
+    test{
+        compileClasspath += configurations.provided
+        runtimeClasspath += configurations.provided
+    }
+}
+javadoc.classpath = javadoc.classpath.plus(configurations.provided)
+if (plugins.hasPlugin('idea')){
+    idea.module.scopes.PROVIDED.plus += [configurations.provided]
+}
+if (plugins.hasPlugin('eclipse')){
+    eclipse.classpath.plusConfigurations.add(configurations.provided)
+}

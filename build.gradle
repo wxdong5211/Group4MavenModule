@@ -2,6 +2,7 @@ apply plugin : 'java'
 //apply plugin : 'war'//providedCompile need this plugin
 //apply plugin: 'scala'// when use scala lang
 //apply from : 'gradle/application.gradle'
+//apply from : 'gradle/provided.gradle'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

@@ -35,6 +35,18 @@ repositories {
     }
 }
 
+jar {
+    manifest {
+        attributes 'Created-By' : 'Gralde',
+            'Build-Jdk' : System.getProperty('java.version'),
+            'Specification-Title' : project.name,
+            'Specification-Version' : project.version,
+            'Implementation-Title' : project.name,
+            'Implementation-Version' : project.version,
+            'Implementation-Vendor-Id' : project.group
+    }
+}
+
 dependencies {
 //    compile 'com.google.guava:guava:18.0'
 //    providedCompile  'javax:javaee-api:7.0'

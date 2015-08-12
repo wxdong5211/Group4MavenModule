@@ -1,8 +1,8 @@
 apply plugin : 'maven-publish'
 
 def auther = 'auther'
-def description = project.description
-description = description==null?'some custom description':description
+def projectDesc = project.description
+projectDesc = projectDesc==null?'some custom description':projectDesc
 
 task sourceJar(type: Jar){
     classifier 'sources'
@@ -34,7 +34,7 @@ publishing {
                 asNode().children().last() + {
                     resolveStrategy = Closure.DELEGATE_FIRST
 
-                    description description
+                    description projectDesc
                     scm {
                         url "http://github.com/${auther}/${project.name}"
                         connection "scm:git:http://github.com/${auther}/${project.name}.git"

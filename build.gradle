@@ -38,7 +38,8 @@ repositories {
 jar {
     manifest {
         attributes 'Created-By' : 'Gralde',
-            'Build-Jdk' : System.getProperty('java.version'),
+            'Build-Jdk' : System.getProperty('user.name'),
+            'Built-By' : System.getProperty('java.version'),
             'Specification-Title' : project.name,
             'Specification-Version' : project.version,
             'Implementation-Title' : project.name,
@@ -63,3 +64,5 @@ apply from : 'gradle/junit.gradle'
 //apply from : 'gradle/spring.gradle'
 //apply from : 'gradle/springsecurity.gradle'
 //apply from : 'gradle/struts2.gradle'
+
+defaultTasks 'clean','build'

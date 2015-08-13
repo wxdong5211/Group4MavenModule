@@ -1,7 +1,25 @@
 apply plugin : 'java'
 //apply plugin : 'war'//providedCompile need this plugin
 //apply plugin: 'scala'// when use scala lang
-//apply from : 'gradle/sonar.gradle'
+
+buildscripts {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            name 'jboss-snapshots'
+            url 'https://repository.jboss.org/nexus/content/repositories/releases/'
+        }
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+//        classpath 'org.sonarqube.gradle:gradle-sonarqube-plugin:1.0'
+    }
+}
+
+//apply from : 'gradle/sonar.gradle' //need install buildscripts classpath
 //apply from : 'gradle/application.gradle'
 //apply from : 'gradle/provided.gradle'
 
@@ -29,6 +47,7 @@ tasks.withType(AbstractCompile){
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven {
         name 'jboss-snapshots'

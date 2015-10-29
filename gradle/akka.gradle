@@ -4,7 +4,7 @@ if (plugins.hasPlugin('scala')){
         scala.srcDirs = ['src/main/scala','src/main/java']
     }
     dependencies {
-        compile 'org.scala-lang:scala-library:2.11.4'
+        compile 'org.scala-lang:scala-library:2.11.7'
     }
     tasks.withType(ScalaCompile) {
         scalaCompileOptions.useAnt = false
@@ -12,5 +12,5 @@ if (plugins.hasPlugin('scala')){
 }
 
 dependencies {
-    compile 'com.typesafe.akka:akka-actor_2.11:2.3.7'
+    compile 'com.typesafe.akka:akka-actor_2.11:2.3.9'
 }

@@ -46,6 +46,20 @@ tasks.withType(AbstractCompile){
   options.encoding = "UTF-8"
 }
 
+task filter(type: Sync){
+    from 'src/main/resources'
+    into 'target/resources/main'
+    outputs.upToDateWhen(false)
+    filesMatching('modula.conf'){
+        expand(project.properties)
+//        filter(org.apache.tools.ant.filters.FixCrLfFilter)
+//        filter(org.apache.tools.ant.filters.ReplaceTokens, tokens : ['project.groupId':project.group])
+    }
+}
+
+filter.mustRunAfter processResources
+classes.dependsOn filter
+
 repositories {
     mavenLocal()
     mavenCentral()

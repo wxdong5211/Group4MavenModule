@@ -23,6 +23,8 @@ applicationDefaultJvmArgs = [
 //        "-XX:+CMSClassUnloadingEnabled",
 //        "-XX:CMSInitiatingOccupancyFraction=68",//concurrent mode failure set it small
 //        "-XX:+UseCMSInitiatingOccupancyOnly",
+//        "-XX:MaxDirectMemorySize=64m"
+//        "-XX:-UseGCOverheadLimit",
 
 //        "-XX:MaxTenuringThreshold=14",//<15
 

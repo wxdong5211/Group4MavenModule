@@ -6,9 +6,9 @@ if (plugins.hasPlugin('scala')){
     dependencies {
         compile 'org.scala-lang:scala-library:2.11.7'
     }
-    tasks.withType(ScalaCompile) {
-        scalaCompileOptions.useAnt = false
-    }
+    //tasks.withType(ScalaCompile) {
+    //    scalaCompileOptions.useAnt = false
+    //}
 }
 
 dependencies {

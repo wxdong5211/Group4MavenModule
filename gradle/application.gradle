@@ -23,7 +23,7 @@ applicationDefaultJvmArgs = [
 //        "-XX:+CMSClassUnloadingEnabled",
 //        "-XX:CMSInitiatingOccupancyFraction=68",//concurrent mode failure set it small
 //        "-XX:+UseCMSInitiatingOccupancyOnly",
-//        "-XX:MaxDirectMemorySize=64m"
+//        "-XX:MaxDirectMemorySize=64m",
 //        "-XX:-UseGCOverheadLimit",
 
 //        "-XX:MaxTenuringThreshold=14",//<15
@@ -60,7 +60,7 @@ applicationDefaultJvmArgs = [
 ]
 
 jar {
-    exclude "**/*.xml","**/*.properties"
+    exclude "**/*.xml","**/*.properties","**/*.conf"
 }
 
 startScripts{
@@ -68,8 +68,18 @@ startScripts{
     doLast {
         def windowsScriptFile = file getWindowsScript()
         def unixScriptFile    = file getUnixScript()
-        windowsScriptFile.text = windowsScriptFile.text.replace('%APP_HOME%\\lib\\conf', '%APP_HOME%\\conf')
-        unixScriptFile.text    = unixScriptFile.text.replace('$APP_HOME/lib/conf', '$APP_HOME/conf')
+        def winHeadTag = 'CLASSPATH=%APP_HOME%'
+        def winTailTag = '%APP_HOME%\\lib\\conf\r\n'
+        def winText = windowsScriptFile.text
+        def winCp = winText.substring(winText.indexOf(winHeadTag),winText.indexOf(winTailTag)+winTailTag.length())
+        windowsScriptFile.text = winText.replace(winCp, 'CLASSPATH=%APP_HOME%\\lib\\*;%APP_HOME%\\conf')
+//        windowsScriptFile.text = winText.text.replace('%APP_HOME%\\lib\\conf', '%APP_HOME%\\conf')
+        def uxHeadTag = 'CLASSPATH=$APP_HOME'
+        def uxTailTag = '$APP_HOME/lib/conf\n'
+        def uxText = unixScriptFile.text
+        def uxCp = uxText.substring(uxText.indexOf(uxHeadTag),uxText.indexOf(uxTailTag)+uxTailTag.length())
+        unixScriptFile.text = uxText.replace(uxCp, 'CLASSPATH=$APP_HOME/lib/*:$APP_HOME/conf')
+//        unixScriptFile.text    = unixScriptFile.text.replace('$APP_HOME/lib/conf', '$APP_HOME/conf')
         if(unixScriptFile.text.indexOf("export APP_HOME")==-1){
             unixScriptFile.text    = unixScriptFile.text.replace('APP_HOME=',  'export APP_HOME=')
         }

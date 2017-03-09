@@ -68,6 +68,12 @@ task filter(type: Sync){
 filter.mustRunAfter processResources
 classes.dependsOn filter
 
+task fatJar(type: Jar){
+    baseName += '-all'
+    from { configurations.compile.collect{ it.isDirectory() ? it : zipTree(it)} }
+    with jar
+}
+
 repositories {
     mavenLocal()
     mavenCentral()

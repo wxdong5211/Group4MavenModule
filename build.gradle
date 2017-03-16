@@ -96,6 +96,11 @@ jar {
     }
 }
 
+//javadoc{
+//    options?.encoding = "UTF-8"
+//}
+
+
 dependencies {
 //    compile 'com.google.guava:guava:18.0'
 //    providedCompile  'javax:javaee-api:7.0'

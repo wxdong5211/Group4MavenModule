@@ -42,6 +42,11 @@ ext {
 //    hibernateVersion = '4.3.7.Final'
 }
 
+//compileJava{
+//    options.fork = true
+//    options.forkOptions.executable = 'javac'
+//    options.compilerArgs << '-XDignore.symbol.file'
+//}
 
 tasks.withType(AbstractCompile){
   if(it.hasProperty('options')){

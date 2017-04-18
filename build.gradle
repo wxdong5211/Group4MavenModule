@@ -103,6 +103,7 @@ jar {
 
 //javadoc{
 //    options?.encoding = "UTF-8"
+//    failOnError = false
 //}
 
 

@@ -44,7 +44,8 @@ ext {
 
 //compileJava{
 //    options.fork = true
-//    options.forkOptions.executable = 'javac'
+//    options.forkOptions.executable = 'javac' // before 3.5
+//    options.forkOptions.javaHome = file(System.getenv('JAVA_HOME')) //3.5
 //    options.compilerArgs << '-XDignore.symbol.file'
 //}
 

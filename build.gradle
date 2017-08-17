@@ -15,7 +15,7 @@ buildscripts {
         }
     }
     dependencies {
-//        classpath 'org.sonarqube.gradle:gradle-sonarqube-plugin:1.0'
+//        classpath 'org.sonarqube.gradle:gradle-sonarqube-plugin:2.5'
     }
 }
 

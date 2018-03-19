@@ -38,6 +38,6 @@ dependencies {
     compile "org.springframework:spring-oxm:${springVersion}"
 
     //test
-    compile "org.springframework:spring-test:${springVersion}"
+    testCompile "org.springframework:spring-test:${springVersion}"
 
 }

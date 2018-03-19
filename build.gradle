@@ -2,7 +2,7 @@ apply plugin : 'java'
 //apply plugin : 'war'//providedCompile need this plugin
 //apply plugin: 'scala'// when use scala lang
 
-buildscripts {
+buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
@@ -63,7 +63,7 @@ tasks.withType(AbstractCompile){
 task filter(type: Sync){
     from 'src/main/resources'
     into 'target/resources/main'
-    outputs.upToDateWhen(false)
+    outputs.upToDateWhen{false}
     filesMatching('modula.conf'){
         expand(project.properties)
 //        filter(org.apache.tools.ant.filters.FixCrLfFilter)
@@ -82,6 +82,10 @@ task fatJar(type: Jar){
 
 repositories {
     mavenLocal()
+    // maven {
+    //     name 'nexus'
+    //     url 'http://m2.ys.com:8081/nexus/content/groups/public/'
+    // }
     mavenCentral()
     maven {
         name 'jboss-snapshots'

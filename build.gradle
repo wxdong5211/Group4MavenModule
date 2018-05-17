@@ -16,6 +16,7 @@ buildscript {
     }
     dependencies {
 //        classpath 'org.sonarqube.gradle:gradle-sonarqube-plugin:2.5'
+//        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE'
     }
 }
 
@@ -130,6 +131,7 @@ apply from : 'gradle/junit.gradle'
 //apply from : 'gradle/mvnpush.gradle'
 //apply from : 'gradle/mybatis.gradle'
 //apply from : 'gradle/spring.gradle'
+//apply from : 'gradle/spring-boot.gradle'
 //apply from : 'gradle/springsecurity.gradle'
 //apply from : 'gradle/struts2.gradle'
 

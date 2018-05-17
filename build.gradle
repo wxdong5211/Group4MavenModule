@@ -55,6 +55,10 @@ tasks.withType(AbstractCompile){
   }
 }
 
+//clean.doLast{
+//    file('out').deleteDir()
+//}
+
 //task wrapper(type: Wrapper){
   //gradleVersion = project.gradleWrapperVersion
   //distributionUrl = 'http://proxy.com/your-gradle-zip-path.zip'

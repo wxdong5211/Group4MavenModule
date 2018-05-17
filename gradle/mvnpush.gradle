@@ -1,6 +1,9 @@
 apply plugin : 'maven-publish'
 
 def auther = 'auther'
+if(ext.has('auther')){
+    auther = ext.auther
+}
 def projectDesc = project.description
 projectDesc = projectDesc==null?'some custom description':projectDesc
 

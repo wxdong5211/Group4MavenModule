@@ -60,7 +60,7 @@ tasks.withType(AbstractCompile){
 //    file('out').deleteDir()
 //}
 
-//task wrapper(type: Wrapper){
+//wrapper{
   //gradleVersion = project.gradleWrapperVersion
   //distributionUrl = 'http://proxy.com/your-gradle-zip-path.zip'
 //}
@@ -90,6 +90,7 @@ repositories {
     // maven {
     //     name 'nexus'
     //     url 'http://m2.ys.com:8081/nexus/content/groups/public/'
+    //     allowInsecureProtocol true
     // }
     mavenCentral()
     maven {
@@ -118,7 +119,7 @@ jar {
 
 
 dependencies {
-//    compile 'com.google.guava:guava:18.0'
+//    implementation 'com.google.guava:guava:18.0'
 //    providedCompile  'javax:javaee-api:7.0'
 }
 
